@@ -1,0 +1,10 @@
+
+
+class Shop {
+    constructor(){
+
+    }
+    render(){
+
+    }
+}

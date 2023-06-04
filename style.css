@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: block;
+}
+body header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+}
+body header .logo {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body header .logo img {
+  width: 10%;
+  height: auto;
+  margin-right: 3%;
+}
+body header .searcher {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body header .searcher input {
+  width: 60%;
+  height: 50%;
+}
+body header .searcher button {
+  width: 20%;
+  height: 50%;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+body main #productList {
+  width: 60%;
+  background-color: #fff;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2%;
+}
+body main #productList .item {
+  transition: all 0.4s;
+  padding: 2%;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+body main #productList .item img {
+  width: 20%;
+}
+body main #productList .item--info h2 {
+  text-align: start;
+  font-size: 1.5em;
+}
+body main #productList .item--info p {
+  text-align: start;
+  font-size: 1em;
+}
+body main #productList .item--info .rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body main #productList .item--info .rating img {
+  width: 8%;
+}
+body main #productList .item--info h3 {
+  font-size: 1em;
+}
+body main #productList .item--info h4 {
+  font-size: 1em;
+}
+body main #productList .item button {
+  margin: 10px auto;
+  border: none;
+  background-color: black;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body main #productList .item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #666;
+}
+body main #cartOfProducts {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+body main #cartOfProducts #containerCart {
+  width: 100%;
+}
+body main #cartOfProducts #containerCart .carItemIndividual {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #cartOfProducts #containerCart .carItemIndividual img {
+  width: 10%;
+}/*# sourceMappingURL=style.css.map */
