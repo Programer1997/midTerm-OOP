@@ -7,8 +7,10 @@ class ProductItem {
         const cartContainer = document.querySelector('#containerCart');
         let card = "";
         cart.forEach((element) => {
-            
+
+            if(element.length !==0){ 
             let priceQtyItem = element.quantify*element.price;
+            
             card+= `
             <div class="carItemIndividual">
                 <img src = "${element.img}"/>
@@ -17,8 +19,10 @@ class ProductItem {
                 <h3>${priceQtyItem + " $"}</h3>
                 <button id = "buttonRemove" value="${element.id}"><i class="fa-solid fa-trash"></i></button>
             </div>`;
+            }
         });
         cartContainer.innerHTML = card;
+    
     }
     render(){
         // return the product element with the product data (<li>)

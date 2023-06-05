@@ -104,6 +104,22 @@ body main #cartOfProducts {
   width: 30%;
   display: flex;
   flex-direction: column;
+  border: 1px solid #666;
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: auto;
+  position: sticky !important;
+  top: 0;
+  transition: 0.3s;
+  margin-right: 2%;
+}
+body main #cartOfProducts h4 {
+  background-color: rgb(33, 37, 41);
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  padding: 1%;
 }
 body main #cartOfProducts #containerCart {
   width: 100%;
@@ -114,7 +130,41 @@ body main #cartOfProducts #containerCart .carItemIndividual {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 2%;
 }
 body main #cartOfProducts #containerCart .carItemIndividual img {
   width: 10%;
+}
+body main #cartOfProducts #containerCart .carItemIndividual h4 {
+  color: black;
+  background-color: white;
+  font-size: 1em;
+}
+body main #cartOfProducts #containerCart .carItemIndividual h3 {
+  font-size: 1.2em;
+}
+body main #cartOfProducts #containerCart .carItemIndividual button {
+  border: none;
+}
+body main #cartOfProducts #containerCart .carItemIndividual button i {
+  border: none;
+}
+body main #cartOfProducts #checkOut {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1%;
+}
+body main #cartOfProducts #checkOut .row {
+  width: 100%;
+  display: inline;
+  padding: 1%;
+}
+body main #cartOfProducts #checkOut .row .totalPriceCar {
+  font-size: 1.7em;
+}
+body main #cartOfProducts #checkOut .row .text {
+  margin-right: 8em;
+  font-size: 1.2em;
 }/*# sourceMappingURL=style.css.map */

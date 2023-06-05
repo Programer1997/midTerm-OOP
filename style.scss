@@ -139,9 +139,23 @@ body {
             width: 30%;
             display: flex;
             flex-direction: column;
-            
+
+                border: 1px solid #666;
+                margin-top: 30px;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: auto;
+                position: sticky !important;
+                top: 0;
+                transition: .3s;
+                margin-right: 2%;
 
             h4 { 
+                background-color: rgb(33,37,41);
+                color: white;
+                text-align: center;
+                font-weight: 500;
+                padding: 1%;
 
             }
             #containerCart {
@@ -152,21 +166,26 @@ body {
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
+                    padding: 2%;
                     img { 
                         width: 10%;
-
                     } 
-                    h4 { 
-
+                    h4 {
+                        color: black;
+                        background-color:white; 
+                        font-size: 1em;
                     }
                     p {
 
                     }
                     h3{
+                        font-size: 1.2em;
 
                     }
                     button { 
+                        border: none;
                         i{
+                            border: none;
 
                         }
 
@@ -176,6 +195,28 @@ body {
 
             }
             #checkOut {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 1%;
+                .row { 
+                    width: 100%;
+                    display: inline;
+                    padding: 1%;
+                    .totalPriceCar { 
+                        font-size: 1.7em;
+                    }
+                    .text { 
+                        margin-right: 8em;
+                        font-size: 1.2em;
+                    }
+
+                }
+                button { 
+                    
+
+                }
 
             }
 

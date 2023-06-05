@@ -9,6 +9,7 @@ var cart = [];
 class ProductList {
     constructor(){
         this.products = [];
+        this.totalAmount = 0;
     }
     fetchProducts(){
 
@@ -26,8 +27,6 @@ class ProductList {
         // render the products by looping through the products array and create a new ProductItem instance for each product. Use render method of ProductItem class to get each product element and append it to the `<ul>`.
         const productsPage = document.querySelector('#productList');
         let card = "";
-        
-
         this.products.forEach((element,index,array) => {
             //console.log(element);
             //console.log(index);
@@ -38,7 +37,7 @@ class ProductList {
         }
         );  //read every element, after save each object inside to variable and send to CLASS produdctItem.js
         //console.log(this.products);
-        productsPage.innerHTML = card;
+        productsPage.innerHTML = card;  
 
         const addCarButton = document.querySelectorAll('.addCart');
         addCarButton.forEach((button,index)=>{
@@ -46,12 +45,21 @@ class ProductList {
                 //console.log(index);
                 this.addProductToCart(this.products[index]); //i send the information of element selected
 
+
+                //Add products selected to Cart section and show it in the HTML Cart 
                 const showCart = new ProductItem (); 
                 showCart.addToCart(cart);
-                
+                this.removeProductFromCart();
+
+                //Get Total amount of the products of the cart
+                const amount = document.querySelector('.totalPriceCar'); //conection with my HTML file
+                const amountShopping = new ShoppingCart (cart);          //conection with the shoppingCart CLASS
+                this.totalAmount = amountShopping.getTotal(); //i get a number 
+                amount.innerHTML = this.totalAmount;
             });
         });
     }
+    //here i Add the product selected to the Cart (ARRAY), i dont add to my HTML yet! 
     addProductToCart (product){
         if (cart[product.id]){
 
@@ -69,13 +77,33 @@ class ProductList {
      }
 
     }
-}
-const listOfProducts = new ProductList();
+    removeProductFromCart(){
+        const remove = document.querySelectorAll('#buttonRemove');
+        //console.log(remove);
+        remove.forEach((button,index,array)=>{
+            button.addEventListener('click',()=>{
+                //console.log(index);
+                console.log(button.value);
+                cart.splice(button.value,1,"");
+                console.log(cart);
+                button.parentElement.remove();
 
+                const amount = document.querySelector('.totalPriceCar'); //conection with my HTML file
+                const amountShopping = new ShoppingCart (cart);          //conection with the shoppingCart CLASS
+                this.totalAmount = amountShopping.getTotal(); //i get a number 
+                amount.innerHTML = this.totalAmount;
+
+            });
+        });
+    }
+}
+
+const listOfProducts = new ProductList();
+/*
 listOfProducts.fetchProducts();
 setTimeout(()=>{
     listOfProducts.render();
-},500);
+},1000);*/
 
 
 searchButton.addEventListener('click',(event)=>{
@@ -88,7 +116,7 @@ searchButton.addEventListener('click',(event)=>{
         listOfProducts.fetchProducts();
         setTimeout(()=>{
             listOfProducts.render();
-        },500);
+        },1000);
     }
 }
 );
